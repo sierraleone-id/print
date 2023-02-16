@@ -58,6 +58,20 @@ import io.mosip.print.logger.PrintLogger;
 import io.mosip.print.model.CertificateEntry;
 import io.mosip.print.spi.PDFGenerator;
 import io.mosip.print.util.EmptyCheckUtils;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.URL;
+import java.security.GeneralSecurityException;
+import java.security.PrivateKey;
+import java.security.Provider;
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The PdfGeneratorImpl is the class you will use most when converting processed
