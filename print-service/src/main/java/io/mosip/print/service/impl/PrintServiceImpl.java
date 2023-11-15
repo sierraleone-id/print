@@ -281,8 +281,8 @@ public class PrintServiceImpl implements PrintService{
 			}
 			setTemplateAttributes(decryptedJson.toString(), attributes);
 			attributes.put(IdType.UIN.toString(), uin);
-
-			byte[] textFileByte = createTextFile(decryptedJson.toString());
+		        attributes.put(IdType.RID.toString(), registrationId);
+		    byte[] textFileByte = createTextFile(decryptedJson.toString());
 			byteMap.put(UIN_TEXT_FILE, textFileByte);
 
                 boolean isQRcodeSet = setQrCode(decryptedJson.toString(), attributes, isPhotoSet);
